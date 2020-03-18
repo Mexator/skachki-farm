@@ -19,6 +19,6 @@ async def main():
             print('Error sending message, retry in',10*waiting_multiplier,'seconds')
             await asyncio.sleep(10*waiting_multiplier)
             waiting_multiplier*=2
-if sys.argv[1] == "--bootstrap":
+if len(sys.argv) > 1 and sys.argv[1] == "--bootstrap":
     sys.exit()
 asyncio.get_event_loop().run_until_complete(main())

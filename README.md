@@ -8,4 +8,4 @@ Script for sending messages to Skachki Telegram bot to farm money
     This command will create a session file, needed to identify user,
     that sends message 
 3. Run ```docker build -t container_name```
-4. Run ```docker run -it container_name``` 
+4. Run ```docker run -d container_name``` 
