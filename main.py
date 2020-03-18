@@ -1,9 +1,10 @@
 from telethon import TelegramClient
 import asyncio
 import time
+import sys
 api_id = 123
 api_hash = 'XXX'
-client = TelegramClient('session_name', api_id, api_hash)
+client = TelegramClient('skacki_farm', api_id, api_hash)
 client.start()
 async def main():
     entity = await client.get_entity('https://t.me/Horse_run_bot')
@@ -18,4 +19,6 @@ async def main():
             print('Error sending message, retry in',10*waiting_multiplier,'seconds')
             await asyncio.sleep(10*waiting_multiplier)
             waiting_multiplier*=2
+if sys.argv[1] == "--bootstrap":
+    sys.exit()
 asyncio.get_event_loop().run_until_complete(main())
