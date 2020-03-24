@@ -15,6 +15,7 @@ async def main():
             print('Message was sent')
             time.sleep(60*60)
             waiting_multiplier=1
+            await client.edit_folder(entity=entity,folder=1)    
         except asyncio.TimeoutError:
             print('Error sending message, retry in',10*waiting_multiplier,'seconds')
             await asyncio.sleep(10*waiting_multiplier)
